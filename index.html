@@ -8,5 +8,19 @@
 </head>
 <body>
     Client for calling the api!
+    <p id="main">
+
+    </p>
+    <script>
+        let textEl = document.querySelector('#main');
+        async function loadAnilist(){
+            let response = await fetch('http://localhost:3000/api');
+            let res = await response.json();
+
+            textEl.textContent = JSON.stringify(res);
+        }
+
+        loadAnilist();
+    </script>
 </body>
 </html>
